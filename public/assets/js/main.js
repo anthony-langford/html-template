@@ -212,6 +212,16 @@
 
 				});
 
+			// Form submission.
+				$footer.find('input.special').click(() => {
+					event.preventDefault();
+					event.stopPropagation();
+					let completeForm = true;
+					let formData = $footer.find('form').serialize();
+					console.log('formData', formData);
+					let formValidation = formData.split('&');
+				});
+
 		// Main.
 			var $main = $('#main');
 
