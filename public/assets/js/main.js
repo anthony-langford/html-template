@@ -250,6 +250,14 @@
 							if ($("alert")) {
 	          		$("alert").remove();
 	          	}
+	          	$.ajax({
+		            url: "/",
+		            type: "POST",
+		            data: formData,
+		            success: () => {
+		              console.log("Successful form post");
+		            }
+		          });
 						}
 					});
 				});
