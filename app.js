@@ -3,8 +3,8 @@ const app     = express();
 
 let PORT = 3000;
 
-app.use('/assets', express.static(__dirname + '/assets'))
-app.use('/images', express.static(__dirname + '/images'))
+app.use('/assets', express.static(__dirname + '/assets'));
+app.use('/images', express.static(__dirname + '/images'));
 
 app.get('/', function (req, res) {
   res.sendFile('./index.html', { root: __dirname });
