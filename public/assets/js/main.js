@@ -229,6 +229,27 @@
 								let alert = $("<alert>").addClass("alert").text(" Missed a spot!").css({"color": "red", 'text-transform': 'capitalize'});
 								$("#contactHeader").append(alert);
 							}
+						} else if (input == 'email=') {
+							console.log("Empty email field");
+							completeForm = false;
+							if ($("alert")) {
+	          		$("alert").remove();
+								let alert = $("<alert>").addClass("alert").text(" Missed a spot!").css({"color": "red", 'text-transform': 'capitalize'});
+								$("#contactHeader").append(alert);
+							}
+						} else if (input == 'message=') {
+							console.log("Empty message field");
+							completeForm = false;
+							if ($("alert")) {
+	          		$("alert").remove();
+								let alert = $("<alert>").addClass("alert").text(" Missed a spot!").css({"color": "red", 'text-transform': 'capitalize'});
+								$("#contactHeader").append(alert);
+							}
+						} else {
+							completeForm = true;
+							if ($("alert")) {
+	          		$("alert").remove();
+	          	}
 						}
 					});
 				});
