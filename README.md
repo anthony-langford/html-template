@@ -38,4 +38,4 @@ Other:
 	Respond.js (j.mp/respondjs)
 	Skel (skel.io)
 
-aj@lkn.io | @ajlkn
+HTML5 UP: aj@lkn.io | @ajlkn
