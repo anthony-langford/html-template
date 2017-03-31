@@ -25,17 +25,17 @@ you can use for pretty much whatever.
 
 ## Credits
 
-	Demo Images:
-		Unsplash (unsplash.com)
+Demo Images:
+	Unsplash (unsplash.com)
 
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
+Icons:
+	Font Awesome (fortawesome.github.com/Font-Awesome)
 
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		Misc. Sass functions (@HugoGiraudel)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
+Other:
+	jQuery (jquery.com)
+	html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+	Misc. Sass functions (@HugoGiraudel)
+	Respond.js (j.mp/respondjs)
+	Skel (skel.io)
 
-	aj@lkn.io | @ajlkn
+aj@lkn.io | @ajlkn
