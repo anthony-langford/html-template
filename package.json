@@ -1,0 +1,24 @@
+{
+  "name": "html-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/nodemon",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamtonybologna/html-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamtonybologna/html-template/issues"
+  },
+  "homepage": "https://github.com/iamtonybologna/html-template#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0"
+  }
+}
