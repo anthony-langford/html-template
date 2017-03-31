@@ -31,7 +31,7 @@
 		// Transitions supported?
 			if (skel.canUse('transition')) {
 
-				// Add (and later, on load, remove) "loading" class.
+				// Add (and later, on load, remove) 'loading' class.
 					$body.addClass('loading');
 
 					$window.on('load', function() {
@@ -195,7 +195,7 @@
 
 			// Copyright.
 			// This basically just moves the copyright line to the end of the *last* sibling of its current parent
-			// when the "medium" breakpoint activates, and moves it back when it deactivates.
+			// when the 'medium' breakpoint activates, and moves it back when it deactivates.
 				$footer.find('.copyright').each(function() {
 
 					var $this = $(this),
@@ -222,40 +222,61 @@
 					let formValidation = formData.split('&');
 					formValidation.forEach((input) => {
 						if (input == 'name=') {
-							console.log("Empty name field");
+							console.log('Empty name field');
 							completeForm = false;
-							if ($("alert")) {
-	          		$("alert").remove();
-								let alert = $("<alert>").addClass("alert").text(" Missed a spot!").css({"color": "red", 'text-transform': 'capitalize'});
-								$("#contactHeader").append(alert);
+							if ($('alert')) {
+	          		$('alert').remove();
+								let alert = $('<alert>')
+								.addClass('alert')
+								.text(' Missed a spot!')
+								.css({
+									'color': 'red',
+									'text-transform': 'capitalize',
+									'padding-left': '79px'
+								});
+								$('#contactHeader').append(alert);
 							}
 						} else if (input == 'email=') {
-							console.log("Empty email field");
+							console.log('Empty email field');
 							completeForm = false;
-							if ($("alert")) {
-	          		$("alert").remove();
-								let alert = $("<alert>").addClass("alert").text(" Missed a spot!").css({"color": "red", 'text-transform': 'capitalize'});
-								$("#contactHeader").append(alert);
+							if ($('alert')) {
+	          		$('alert').remove();
+								let alert = $('<alert>')
+								.addClass('alert')
+								.text(' Missed a spot!')
+								.css({
+									'color': 'red',
+									'text-transform': 'capitalize',
+									'padding-left': '79px'
+								});
+								$('#contactHeader').append(alert);
 							}
 						} else if (input == 'message=') {
-							console.log("Empty message field");
+							console.log('Empty message field');
 							completeForm = false;
-							if ($("alert")) {
-	          		$("alert").remove();
-								let alert = $("<alert>").addClass("alert").text(" Missed a spot!").css({"color": "red", 'text-transform': 'capitalize'});
-								$("#contactHeader").append(alert);
+							if ($('alert')) {
+	          		$('alert').remove();
+								let alert = $('<alert>')
+								.addClass('alert')
+								.text(' Missed a spot!')
+								.css({
+									'color': 'red',
+									'text-transform': 'capitalize',
+									'padding-left': '79px'
+								});
+								$('#contactHeader').append(alert);
 							}
 						} else {
 							completeForm = true;
-							if ($("alert")) {
-	          		$("alert").remove();
+							if ($('alert')) {
+	          		$('alert').remove();
 	          	}
 	          	$.ajax({
-		            url: "/",
-		            type: "POST",
+		            url: '/',
+		            type: 'POST',
 		            data: formData,
 		            success: () => {
-		              console.log("Successful form post");
+		              console.log('Successful form post');
 		            }
 		          });
 						}
