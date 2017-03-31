@@ -216,7 +216,7 @@
 				$footer.find('input.special').click(() => {
 					event.preventDefault();
 					event.stopPropagation();
-					let completeForm = true;
+					let completeForm = false;
 					let formData = $footer.find('form').serialize();
 					console.log('formData', formData);
 					let formValidation = formData.split('&');
@@ -232,10 +232,11 @@
 								.css({
 									'color': 'red',
 									'text-transform': 'capitalize',
-									'padding-left': '79px'
+									'padding-left': '27%'
 								});
 								$('#contactHeader').append(alert);
 							}
+							return;
 						} else if (input == 'email=') {
 							console.log('Empty email field');
 							completeForm = false;
@@ -247,10 +248,11 @@
 								.css({
 									'color': 'red',
 									'text-transform': 'capitalize',
-									'padding-left': '79px'
+									'padding-left': '27%'
 								});
 								$('#contactHeader').append(alert);
 							}
+							return;
 						} else if (input == 'message=') {
 							console.log('Empty message field');
 							completeForm = false;
@@ -262,25 +264,28 @@
 								.css({
 									'color': 'red',
 									'text-transform': 'capitalize',
-									'padding-left': '79px'
+									'padding-left': '27%'
 								});
 								$('#contactHeader').append(alert);
 							}
+							return;
 						} else {
 							completeForm = true;
 							if ($('alert')) {
 	          		$('alert').remove();
 	          	}
-	          	$.ajax({
-		            url: '/',
-		            type: 'POST',
-		            data: formData,
-		            success: () => {
-		              console.log('Successful form post');
-		            }
-		          });
 						}
 					});
+					if (completeForm = true) {
+          	$.ajax({
+	            url: '/',
+	            type: 'POST',
+	            data: formData,
+	            success: () => {
+	              console.log('Successful form post');
+	            }
+	          });
+        	}
 				});
 
 		// Main.
