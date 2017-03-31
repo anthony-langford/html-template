@@ -1,7 +1,7 @@
 {
   "name": "html-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "node, express, html5 up",
   "main": "app.js",
   "scripts": {
     "dev": "./node_modules/.bin/nodemon",
