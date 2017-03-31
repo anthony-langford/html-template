@@ -220,6 +220,17 @@
 					let formData = $footer.find('form').serialize();
 					console.log('formData', formData);
 					let formValidation = formData.split('&');
+					formValidation.forEach((input) => {
+						if (input == 'name=') {
+							console.log("Empty name field");
+							completeForm = false;
+							if ($("alert")) {
+	          		$("alert").remove();
+								let alert = $("<alert>").addClass("alert").text(" Missed a spot!").css({"color": "red", 'text-transform': 'capitalize'});
+								$("#contactHeader").append(alert);
+							}
+						}
+					});
 				});
 
 		// Main.
