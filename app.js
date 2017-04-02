@@ -19,11 +19,11 @@ app.use('/public', express.static(__dirname + '/public'));
 
 app.use(morgan('dev'));
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.sendFile('./index.html', { root: __dirname });
 });
 
-app.post('/', function (req, res) {
+app.post('/', (req, res) => {
   if (!req.body) {
     res.status(400).json({ error: 'invalid request: no data in POST body' });
     return;
@@ -34,11 +34,11 @@ app.post('/', function (req, res) {
     to: 'anthony.langford@gmail.com',
     subject: "IMPORTANT ART THINGS!",
     text: `${req.body.message}`
-  }, function(err, response) {
+  }).then((err, response) => {
     if (err) {
-     console.log('error', err);
+     console.log("FAILED. error=", err);
     } else {
-     console.log("email sent");
+     console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
     }
   });
 
