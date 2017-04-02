@@ -1,16 +1,8 @@
 const express       = require('express');
 const morgan        = require('morgan');
 const bodyParser    = require("body-parser");
-const emailjs       = require('emailjs');
 const nodemailer    = require('nodemailer');
 const app           = express();
-
-const email = emailjs.server.connect({
-  user: "free.tony.bologna@gmail.com",
-  password:" luck65pwns",
-  host: "smtp.gmail.com",
-  ssl: true
-});
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
@@ -38,19 +30,6 @@ app.post('/', (req, res) => {
     res.status(400).json({ error: 'invalid request: no data in POST body' });
     return;
   }
-
-  // email.send({
-  //   from: `${req.body.name} <${req.body.email}>`,
-  //   to: 'anthony.langford@gmail.com',
-  //   subject: "IMPORTANT ART THINGS!",
-  //   text: `${req.body.message}`
-  // }, (err, response) => {
-  //   if (err) {
-  //    console.log("FAILED. error=", err);
-  //   } else {
-  //    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-  //   }
-  // });
 
   // setup email data with unicode symbols
   let mailOptions = {
