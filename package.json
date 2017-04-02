@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/iamtonybologna/html-template#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "emailjs": "^1.0.8",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
     "nodemon": "^1.11.0"
