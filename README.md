@@ -5,11 +5,6 @@ Say hello to Multiverse, a slick, one-page gallery design with a fully functiona
 "About" button in the lower right to see what I mean). Had a ton of fun putting this one
 together, and I hope you have as much fun working with it :)
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
 ## Project Setup
 
 1. Clone this repository
