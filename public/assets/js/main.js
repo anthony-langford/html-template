@@ -212,71 +212,52 @@
 
 				});
 
+			let checkAlert = () => {
+				if ($('alert')) {
+      		$('alert').remove();
+					let alert = $('<alert>')
+						.addClass('alert')
+						.text(' Missed a spot!')
+						.css({
+							'color': 'red',
+							'text-transform': 'capitalize',
+							'padding-left': '27%'
+						});
+					$('#contactHeader').append(alert);
+				}
+			}
+
 			// Form submission.
 				$footer.find('input.special').click(() => {
 					event.preventDefault();
 					event.stopPropagation();
-					let completeForm = false;
+					let nameFieldComplete = true;
+					let emailFieldComplete = true;
+					let messageFieldComplete = true;
 					let formData = $footer.find('form').serialize();
-					console.log('formData', formData);
 					let formValidation = formData.split('&');
-					formValidation.forEach((input) => {
-						if (input == 'name=') {
-							console.log('Empty name field');
-							completeForm = false;
-							if ($('alert')) {
-	          		$('alert').remove();
-								let alert = $('<alert>')
-								.addClass('alert')
-								.text(' Missed a spot!')
-								.css({
-									'color': 'red',
-									'text-transform': 'capitalize',
-									'padding-left': '27%'
-								});
-								$('#contactHeader').append(alert);
-							}
-							return;
-						} else if (input == 'email=') {
-							console.log('Empty email field');
-							completeForm = false;
-							if ($('alert')) {
-	          		$('alert').remove();
-								let alert = $('<alert>')
-								.addClass('alert')
-								.text(' Missed a spot!')
-								.css({
-									'color': 'red',
-									'text-transform': 'capitalize',
-									'padding-left': '27%'
-								});
-								$('#contactHeader').append(alert);
-							}
-							return;
-						} else if (input == 'message=') {
-							console.log('Empty message field');
-							completeForm = false;
-							if ($('alert')) {
-	          		$('alert').remove();
-								let alert = $('<alert>')
-								.addClass('alert')
-								.text(' Missed a spot!')
-								.css({
-									'color': 'red',
-									'text-transform': 'capitalize',
-									'padding-left': '27%'
-								});
-								$('#contactHeader').append(alert);
-							}
-							return;
-						} else {
-							completeForm = true;
-							if ($('alert')) {
-	          		$('alert').remove();
-	          	}
+					formValidation.forEach((field) => {
+						console.log('field', field);
+						if (field === 'name=') {
+							console.log('Complete name field');
+							nameFieldComplete = false;
+							checkAlert();
+						}
+						if (field === 'email=') {
+							console.log('Complete email field');
+							emailFieldComplete = false;
+							checkAlert();
+						}
+						if (field === 'message=') {
+							console.log('Complete message field');
+							messageFieldComplete = false;
+							checkAlert();
 						}
 					});
-					if (completeForm = true) {
+					if (nameFieldComplete === true && emailFieldComplete === true && messageFieldComplete === true) {
+						if ($('alert')) {
+          		$('alert').remove();
+          	}
           	$.ajax({
 	            url: '/',
 	            type: 'POST',

@@ -13,7 +13,12 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  // console.log('name', req.body.name, 'email', req.body.name, 'message', req.body.message);
+  // if (!req.body) {
+  //   res.status(400).json({ error: 'invalid request: no data in POST body' });
+  //   return;
+  // }
+
+  console.log ('req.body', req.body);
 });
 
 app.listen(PORT, () => {
